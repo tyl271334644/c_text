@@ -6,10 +6,10 @@ int main(){
 	int i;
 	for (i = 0; i<4; i++)
 	{
-		int data;
-		data = a[i];
-		a[i] = b[i];
-		b[i] = data;
+		a[i] = a[i] ^ b[i];
+		b[i] = a[i] ^ b[i];
+		a[i] = a[i] ^ b[i];
+
 	}
 	for (i = 0; i < 4; i++){
 		printf("%d", a[i]);
