@@ -63,11 +63,12 @@ void ComputerMove(){
 	printf("请电脑落子!\n");
 	int row = 0;
 	int col = 0;
+	
 	while (1){
-		row = rand() % ROW; 
+		row = rand() % ROW;
 		col = rand() % COL;
 		if (g_chess_board[row][col] == ' '){
-			g_chess_board[row][col] = '0';
+			g_chess_board[row][col] = 'o';
 			break;
 		}
 
@@ -110,7 +111,7 @@ char  CheckWinner(){
 	}
 	//3.检查对角线
 	if (g_chess_board[0][0] == g_chess_board[1][1]
-		&& g_chess_board[0][0 == g_chess_board[2][2]]
+		&& g_chess_board[0][0] == g_chess_board[2][2]
 		&& g_chess_board[0][0] != ' '){
 		return g_chess_board[0][0];
 	}
